@@ -10,20 +10,30 @@ body {
 }
 
 .header-left {
-  float: left;
+  /* float: left; */ /* 1 */
   padding: 0;
 }
 
 .header-right {
-  float: right;
+  /* float: right; */ /* 2 */
   margin-right: 20px;
 }
 
-.clearfix::after {
+.clearfix {
+  display: flex;
+  justify-content: space-between;
+} /* 3 */
+
+/* .clearfix::after {
   content: " ";
   display: block;
   clear: both;
-}
+} */ /* 4 */
+
+main {
+  display: flex;
+  flex-direction: column;
+} /* 5 (main kısmını ve içindekileri direkt flex yapısına yerleştirdik.)*/
 
 ul {
   list-style-type: none;
@@ -168,6 +178,8 @@ footer {
   background-color: #f2f2f2;
   font-size: 14px;
   line-height: 40px;
+  display: flex; /* 6 */
+  flex-direction: column; /* 7 */
 }
 
 .country {
@@ -176,13 +188,18 @@ footer {
   color: #5f6368;
 }
 
+.deep-footer {
+  display: flex; /* 9 (8. adım için HTML dosyasına bakınız.) */
+  justify-content: space-between; /* 9 */
+}
+
 .footer-left {
-  float: left;
+  /* float: left; */ /* 10 */
   margin: 0px;
   padding-left: 23px;
 }
 
 .footer-right {
-  float: right;
+  /* float: right; */ /* 11 */
   margin: 0 12px 0 0;
 }
